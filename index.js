@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require('path')
 const fileupload = require("express-fileupload");
 require("dotenv").config();
 
@@ -7,10 +8,10 @@ const app = express();
 
 app.use(cors());
 app.use(fileupload({ createParentPath: true }));
-app.use(express.static(process.cwd() + "/public"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/", (req, res) => {
-  res.sendFile(process.cwd() + "/public/index.html");
+  res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
 app.post("/api/fileanalyse", (req, res) => {
@@ -23,7 +24,6 @@ app.post("/api/fileanalyse", (req, res) => {
     type: file.mimetype,
     size: file.size,
   };
-  console.log(process.cwd() + "/public/index.html");
   console.log(metadata);
   res.json(metadata);
 });
