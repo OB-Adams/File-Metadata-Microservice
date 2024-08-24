@@ -32,17 +32,25 @@ This microservice accepts file uploads via a POST request to the /api/fileanalys
 ## Installation and Setup
 
 1. Clone the repository:
-     git clone https://github.com/OB-Adams/file-metadata-microservice.git
-   cd file-metadata-microservice
+```
+git clone https://github.com/OB-Adams/file-metadata-microservice.git
+cd file-metadata-microservice
+```
    
 2. Install dependencies:
-     npm install
+```
+npm install
+```
    
 3. Create a `.env` file with the following content:
-     PORT=3000
+```
+PORT=3000
+```
    
 4. Start the server:
-     node server.js
+```
+node server.js
+```
    
 5. Navigate to http://localhost:3000 in your browser.
 
